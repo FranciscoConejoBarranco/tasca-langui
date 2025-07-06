@@ -5,3 +5,48 @@
 .text-tasca-red {
   color: #5f1113;
 }
+
+
+.margen-imagen {
+  padding: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .reverso {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+}
+
+.tembleque {
+  animation: temblor 3s infinite;
+}
+
+@keyframes temblor {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    transform: translate(-2px, 1px) rotate(-0.5deg);
+  }
+  50% {
+    transform: translate(2px, -1px) rotate(0.5deg);
+  }
+  75% {
+    transform: translate(-1px, 2px) rotate(-0.5deg);
+  }
+}
+
+.bg-tasca-red {
+  background-color: #5f1113;
+}
+
+
+.la-tasca-outline {
+  color: transparent;
+  -webkit-text-stroke: 3px white;    /* Borde blanco de 3px */
+  /* Removed 'text-stroke' as it is not a standard CSS property */
+  /* Opcional: sombra para mayor legibilidad */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
