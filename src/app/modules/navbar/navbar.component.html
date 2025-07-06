@@ -1,0 +1,179 @@
+<nav class="bg-tasca-red sticky top-0 z-50 shadow-lg">
+    <!-- Desktop navbar -->
+    <div class="hidden md:block">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <!-- Logo Desktop -->
+        <a href="/" class="flex items-center space-x-3">
+          <img
+            src="images/logo.png"
+            class="h-16 sm:h-20 md:h-24 lg:h-25 w-auto max-h-25"
+            alt="Logo La Tasca del Langui"
+          />
+        </a>
+  
+        <!-- Menú Desktop -->
+        <div class="flex items-center space-x-12">
+          <ul class="flex space-x-12">
+            <li>
+              <a href="#inicio" 
+                 class="text-white font-medium uppercase tracking-wide hover:text-white/80 transition-colors">
+                {{ translate('NAVBAR.HOME') }}
+              </a>
+            </li>
+            <li>
+              <a href="#historia" 
+                 class="text-white font-medium uppercase tracking-wide hover:text-white/80 transition-colors">
+                {{ translate('NAVBAR.HISTORY') }}
+              </a>
+            </li>
+            <li>
+              <a href="#cartas" 
+                 class="text-white font-medium uppercase tracking-wide hover:text-white/80 transition-colors">
+                {{ translate('NAVBAR.MENU') }}
+              </a>
+            </li>
+            <li>
+              <a href="#contacto" 
+                 class="text-white font-medium uppercase tracking-wide hover:text-white/80 transition-colors">
+                {{ translate('NAVBAR.CONTACT') }}
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <!-- Selector de idioma desktop -->
+        <div class="relative">
+          <button
+            type="button"
+            (click)="toggleLanguageDropdown()"
+            class="inline-flex items-center font-medium justify-center px-3 py-2 text-sm text-white rounded-lg cursor-pointer hover:bg-white/10 transition-all duration-300 border border-white/20"
+          >
+            <span class="text-lg mr-2">🌐</span>
+            {{ getCurrentLanguageDisplay() }}
+            <svg
+              class="w-4 h-4 ml-2 transition-transform duration-200"
+              [class.rotate-180]="languageDropdownOpen"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+  
+          <!-- Dropdown de idiomas desktop -->
+          <div
+            *ngIf="languageDropdownOpen"
+            class="absolute top-full right-0 mt-2 z-50 min-w-[160px] bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden"
+          >
+            <div class="py-1">
+              <a
+                (click)="changeLanguage('es')"
+                class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors"
+                [class.bg-gray-100]="currentLanguage === 'es'"
+              >
+                <span class="text-lg mr-3">🇪🇸</span>
+                <div class="flex flex-col">
+                  <span class="font-medium">Español</span>
+                  <span class="text-xs text-gray-500">España</span>
+                </div>
+              </a>
+              <a
+                (click)="changeLanguage('en')"
+                class="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors"
+                [class.bg-gray-100]="currentLanguage === 'en'"
+              >
+                <span class="text-lg mr-3">🇬🇧</span>
+                <div class="flex flex-col">
+                  <span class="font-medium">English</span>
+                  <span class="text-xs text-gray-500">United Kingdom</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Pill Sticky para Móvil SOLAMENTE -->
+  <div class="md:hidden fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full px-2">
+    <div class="bg-tasca-red/90 backdrop-blur-md rounded-full shadow-2xl border border-white/20 mx-auto max-w-full">
+      <div class="flex items-center justify-between px-3 py-2">
+        <!-- Logo pequeño -->
+        <a href="/" class="flex items-center flex-shrink-0">
+          <img
+            src="images/logo.png"
+            class="h-5 w-auto"
+            alt="Logo La Tasca del Langui"
+          />
+        </a>
+  
+        <!-- Navegación responsive -->
+        <div class="flex items-center space-x-1 sm:space-x-2 flex-1 justify-center">
+          <a href="#inicio" 
+             class="text-white hover:text-white/70 transition-colors text-xs sm:text-sm font-medium px-1 sm:px-2 py-1 rounded-full hover:bg-white/20 whitespace-nowrap">
+            {{ translate('NAVBAR.HOME') }}
+          </a>
+          
+          <a href="#historia" 
+             class="text-white hover:text-white/70 transition-colors text-xs sm:text-sm font-medium px-1 sm:px-2 py-1 rounded-full hover:bg-white/20 whitespace-nowrap">
+            {{ translate('NAVBAR.HISTORY') }}
+          </a>
+          
+          <a href="#cartas" 
+             class="text-white hover:text-white/70 transition-colors text-xs sm:text-sm font-medium px-1 sm:px-2 py-1 rounded-full hover:bg-white/20 whitespace-nowrap">
+            {{ translate('NAVBAR.MENU') }}
+          </a>
+          
+          <a href="#contacto" 
+             class="text-white hover:text-white/70 transition-colors text-xs sm:text-sm font-medium px-1 sm:px-2 py-1 rounded-full hover:bg-white/20 whitespace-nowrap">
+            {{ translate('NAVBAR.CONTACT') }}
+          </a>
+        </div>
+  
+        <!-- Selector de idioma -->
+        <div class="relative flex-shrink-0">
+          <button
+            type="button"
+            (click)="toggleLanguageDropdown()"
+            class="flex items-center text-white hover:text-white/70 transition-colors text-xs sm:text-sm font-medium px-1 sm:px-2 py-1 rounded-full hover:bg-white/20"
+          >
+            <span class="mr-1">🌐</span>
+            <span class="hidden sm:inline">{{ getCurrentLanguageDisplay() }}</span>
+          </button>
+  
+          <!-- Dropdown idiomas móvil - HACIA ABAJO -->
+          <div
+            *ngIf="languageDropdownOpen"
+            class="absolute top-full right-0 mt-2 z-50 min-w-[90px] bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden"
+          >
+            <div class="py-1">
+              <a
+                (click)="changeLanguage('es')"
+                class="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors"
+                [class.bg-gray-100]="currentLanguage === 'es'"
+              >
+                <span class="text-base mr-2">🇪🇸</span>
+                <span class="font-medium">ES</span>
+              </a>
+              <a
+                (click)="changeLanguage('en')"
+                class="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors"
+                [class.bg-gray-100]="currentLanguage === 'en'"
+              >
+                <span class="text-base mr-2">🇬🇧</span>
+                <span class="font-medium">EN</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

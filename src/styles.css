@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* Color personalizado para La Tasca del Langui */
+.bg-tasca-red {
+  background-color: #5f1113;
+}
+
+.text-tasca-red {
+  color: #5f1113;
+}
+
+.border-tasca-red {
+  border-color: #5f1113;
+}
