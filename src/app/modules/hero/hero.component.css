@@ -1,53 +1,287 @@
 .bg-tasca-red {
-    background-color: #5f1113;
+  background-color: #5f1113;
+}
+
+.text-tasca-red {
+  color: #5f1113;
+}
+
+.margen-imagen {
+  padding: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .reverso {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+}
+
+.tembleque {
+  animation: temblor 3s infinite;
+}
+
+@keyframes temblor {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0);
+  }
+  25% {
+    transform: translate(-2px, 1px) rotate(-0.5deg);
+  }
+  50% {
+    transform: translate(2px, -1px) rotate(0.5deg);
+  }
+  75% {
+    transform: translate(-1px, 2px) rotate(-0.5deg);
+  }
+}
+
+.la-tasca-outline {
+  color: transparent;
+  -webkit-text-stroke: 3px white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Breakpoint específico para 760px-900px */
+@media (min-width: 760px) and (max-width: 900px) {
+  .tablet-small-img {
+    max-width: 220px !important;
   }
   
-  .text-tasca-red {
-    color: #5f1113;
+  .tablet-small-pill-left {
+    left: -15px !important;
+    top: 0.5rem !important;
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.4rem !important;
+    min-width: 80px !important;
   }
   
-  
-  .margen-imagen {
-    padding: 16px;
+  .tablet-small-pill-right {
+    left: 8rem !important;
+    top: 0.5rem !important;
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.4rem !important;
+    min-width: 70px !important;
   }
   
-  @media only screen and (max-width: 768px) {
-    .reverso {
-      flex-direction: column-reverse;
-      gap: 2rem;
-    }
+  .tablet-small-text-1 {
+    top: 1.5rem !important;
+    right: -30px !important;
+    font-size: 3vw !important;
   }
   
-  .tembleque {
-    animation: temblor 3s infinite;
+  .tablet-small-text-2 {
+    top: 2.5rem !important;
+    right: -35px !important;
+    font-size: 3vw !important;
   }
   
-  @keyframes temblor {
-    0%, 100% {
-      transform: translate(0, 0) rotate(0);
-    }
-    25% {
-      transform: translate(-2px, 1px) rotate(-0.5deg);
-    }
-    50% {
-      transform: translate(2px, -1px) rotate(0.5deg);
-    }
-    75% {
-      transform: translate(-1px, 2px) rotate(-0.5deg);
-    }
+  .tablet-small-text-3 {
+    top: 3.5rem !important;
+    right: -70px !important;
+    font-size: 3vw !important;
   }
   
-  .bg-tasca-red {
-    background-color: #5f1113;
+  .tablet-small-text-subtitle {
+    top: 4.5rem !important;
+    right: -90px !important;
+    font-size: 0.8vw !important;
   }
   
-  
-  .la-tasca-outline {
-    color: transparent;
-    -webkit-text-stroke: 3px white;    /* Borde blanco de 3px */
-    /* Removed 'text-stroke' as it is not a standard CSS property */
-    /* Opcional: sombra para mayor legibilidad */
-    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  .tablet-small-social {
+    top: 5.5rem !important;
+    right: -25px !important;
   }
   
+  .tablet-small-social svg {
+    width: 0.8rem !important;
+    height: 0.8rem !important;
+  }
   
+  .tablet-small-legs {
+    top: 2.5rem !important;
+    width: 1.2rem !important;
+  }
+}
+
+/* Breakpoint para 901px-1100px */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .tablet-medium-img {
+    max-width: 260px !important;
+  }
+  
+  .tablet-medium-pill-left {
+    left: -25px !important;
+    top: 1rem !important;
+    font-size: 0.8rem !important;
+    padding: 0.3rem 0.6rem !important;
+    min-width: 110px !important;
+  }
+  
+  .tablet-medium-pill-right {
+    left: 10rem !important;
+    top: 1rem !important;
+    font-size: 0.8rem !important;
+    padding: 0.3rem 0.6rem !important;
+    min-width: 100px !important;
+  }
+  
+  .tablet-medium-text-1 {
+    top: 2rem !important;
+    right: -60px !important;
+    font-size: 3.5vw !important;
+  }
+  
+  .tablet-medium-text-2 {
+    top: 3.2rem !important;
+    right: -70px !important;
+    font-size: 3.5vw !important;
+  }
+  
+  .tablet-medium-text-3 {
+    top: 4.4rem !important;
+    right: -140px !important;
+    font-size: 3.5vw !important;
+  }
+  
+  .tablet-medium-text-subtitle {
+    top: 5.6rem !important;
+    right: -180px !important;
+    font-size: 1vw !important;
+  }
+  
+  .tablet-medium-social {
+    top: 6.8rem !important;
+    right: -50px !important;
+  }
+  
+  .tablet-medium-social svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  
+  .tablet-medium-legs {
+    top: 3rem !important;
+    width: 1.4rem !important;
+  }
+}
+
+/* Breakpoint para 1101px-1300px */
+@media (min-width: 1101px) and (max-width: 1300px) {
+  .desktop-compact-img {
+    max-width: 300px !important;
+  }
+  
+  .desktop-compact-pill-left {
+    left: -35px !important;
+    top: 1.3rem !important;
+    font-size: 0.9rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+  
+  .desktop-compact-pill-right {
+    left: 12rem !important;
+    top: 1.3rem !important;
+    font-size: 0.9rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+  
+  .desktop-compact-text-1 {
+    top: 2.8rem !important;
+    right: -90px !important;
+    font-size: 4vw !important;
+  }
+  
+  .desktop-compact-text-2 {
+    top: 4.2rem !important;
+    right: -105px !important;
+    font-size: 4vw !important;
+  }
+  
+  .desktop-compact-text-3 {
+    top: 5.6rem !important;
+    right: -210px !important;
+    font-size: 4vw !important;
+  }
+  
+  .desktop-compact-subtitle {
+    top: 7rem !important;
+    right: -260px !important;
+    font-size: 1.3vw !important;
+  }
+  
+  .desktop-compact-social {
+    top: 8.4rem !important;
+    right: -70px !important;
+  }
+  
+  .desktop-compact-social svg {
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+  }
+  
+  .desktop-compact-legs {
+    top: 3.8rem !important;
+    width: 1.8rem !important;
+  }
+}
+
+/* Breakpoint para 1301px-1554px */
+@media (min-width: 1301px) and (max-width: 1554px) {
+  .desktop-wide-img {
+    max-width: 380px !important;
+  }
+  
+  .desktop-wide-pill-left {
+    left: -50px !important;
+    top: 1.8rem !important;
+    font-size: 1rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .desktop-wide-pill-right {
+    left: 15rem !important;
+    top: 1.8rem !important;
+    font-size: 1rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .desktop-wide-text-1 {
+    top: 3.5rem !important;
+    right: -140px !important;
+    font-size: 5vw !important;
+  }
+  
+  .desktop-wide-text-2 {
+    top: 5.2rem !important;
+    right: -160px !important;
+    font-size: 5vw !important;
+  }
+  
+  .desktop-wide-text-3 {
+    top: 6.9rem !important;
+    right: -320px !important;
+    font-size: 5vw !important;
+  }
+  
+  .desktop-wide-subtitle {
+    top: 8.6rem !important;
+    right: -400px !important;
+    font-size: 1.6vw !important;
+  }
+  
+  .desktop-wide-social {
+    top: 10.3rem !important;
+    right: -110px !important;
+  }
+  
+  .desktop-wide-social svg {
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+  }
+  
+  .desktop-wide-legs {
+    top: 4.5rem !important;
+    width: 2.2rem !important;
+  }
+}
